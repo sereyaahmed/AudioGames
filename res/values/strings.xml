@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="hello">Hello World, HelloOpenAL4AndroidActivity!</string>
+    <string name="app_name">Audio Games</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="highway_button">Highway Button</string>
+    <string name="dummy_content">Audio\nGames</string>
+    <string name="title_activity_2">Highway</string>
+    <string name="title_activity_simon_says">Simon_Says</string>
+</resources>
