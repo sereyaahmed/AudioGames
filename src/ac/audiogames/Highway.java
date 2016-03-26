@@ -19,11 +19,11 @@ import org.pielot.openal.Source;
 
 public class Highway extends Activity implements TextToSpeech.OnInitListener { //Highway game
 
-    final int[] position = {0}; // your vehicle position.
+    final int[] position = {-2}; // your vehicle position.
     final int[] rand= {3}; // car direction stored here
     int x=0; // car position for sound
     int i=0; // car distance for sound
-    //private Launcher m_launcher;
+    //private Launcher m_launcher; TODO Haptic feedback
     final Random gen = new Random();
     private TextToSpeech tts;
     private View mContentView;
@@ -58,7 +58,7 @@ public class Highway extends Activity implements TextToSpeech.OnInitListener { /
 			this.engine_Start.setPosition(0, 0, 0);
 			this.engine_running.setPosition(0, 0, 0);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
         info="Swipe right and left to avoid incoming cars. Swipe up, or down to change the difficulty, or mode. Tap and hold to start. Tap twice to go to the menu. Tap once to repeat this message.";
@@ -66,13 +66,11 @@ public class Highway extends Activity implements TextToSpeech.OnInitListener { /
         tts = new TextToSpeech(this, this);
         tts.setPitch(1);
         setContentView(R.layout.activity_2);
-
+        setSpeed();
         mContentView = findViewById(R.id.fullscreen_content_act2);
-        // alternative to below ->
         mContentView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeLeft() {
 
-                //MediaPlayer.create(getApplicationContext(), R.raw.left).start();
                 if(position[0]>0){
                 	scrape.setPosition(-1, 0, 0);
                 	scrape.play(false);}
@@ -103,6 +101,7 @@ public class Highway extends Activity implements TextToSpeech.OnInitListener { /
             	if (!start.isAlive()){
                 tts.stop();
                 position[0]=-2;
+                counter=-1;
                 rand[0]=3;
                 startEng=true;
                 setSpeed();
@@ -150,7 +149,7 @@ public class Highway extends Activity implements TextToSpeech.OnInitListener { /
 
     }
     public void setSpeed(){
-    	if(difficulty>2000 && difficulty<3500)
+    	if(difficulty>2000 && difficulty<3000)
             try {
     			 buffer= env.addBuffer("car_med");
     			car_sound = env.addSource(buffer);
@@ -169,7 +168,7 @@ public class Highway extends Activity implements TextToSpeech.OnInitListener { /
          			System.out.println("error loading: car_fast sound.");
          			e.printStackTrace();
          		}
-        	else if (difficulty>3500)
+        	else// (difficulty>3000)
         		   try {
            			 buffer= env.addBuffer("car_slow");
            			car_sound = env.addSource(buffer);
@@ -190,7 +189,6 @@ public class Highway extends Activity implements TextToSpeech.OnInitListener { /
         super.onPause();
         this.env.stopAllSources();
 		this.env.release();
-		start.interrupt();
     }
 	@Override
 	public void onResume() {
