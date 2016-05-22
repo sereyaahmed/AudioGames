@@ -8,7 +8,7 @@ import android.view.View;
 /**
  * Detects left and right swipes across a view.
  */
-public class OnSwipeTouchListener implements View.OnTouchListener {
+public class OnSwipeTouchListener implements View.OnTouchListener, GestureDetector.OnGestureListener {
 
     private final GestureDetector gestureDetector;
 
@@ -27,10 +27,14 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
     }
     public void onSingleTap(){
     }
+    public void moveCharacter(float x, float y) {
+    	
+    }
     public void onDoubleTap2(){
     }
     public void longPress(){
     }
+    
     public boolean onTouch(View v, MotionEvent event) {
         if (gestureDetector.onTouchEvent(event)) return true;
         else { return false;}
@@ -48,6 +52,12 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
         public boolean onDown(MotionEvent e) {
 
         //    onClick();
+        	int x = (int)e.getX();
+            int y = (int)e.getY();
+//            onSingleTap();
+            if(e.getAction() == android.view.MotionEvent.ACTION_DOWN){
+            	moveCharacter(x, y);
+            }
             return true;
         }
 
@@ -68,17 +78,64 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
             return false;
         }
         @Override
-        public boolean onSingleTapConfirmed(MotionEvent e1){
-            onSingleTap();return true;
+        public boolean onSingleTapConfirmed(MotionEvent el){
+        	int x = (int)el.getX();
+            int y = (int)el.getY();
+            onSingleTap();
+//            if(el.getAction() == android.view.MotionEvent.ACTION_DOWN){
+//            	moveCharacter(x, y);
+//            }
+            return true;
         }
         @Override
-        public boolean onDoubleTap(MotionEvent e1){
-            onDoubleTap2();return true;
+        public boolean onDoubleTap(MotionEvent el){
+            onDoubleTap2();
+            int x = (int)el.getX();
+            int y = (int)el.getY();
+//            if(el.getAction() == android.view.MotionEvent.ACTION_DOWN){
+//            	moveCharacter(x, y);
+//            }
+            return true;
         }
         @Override
         public void onLongPress(MotionEvent e1){
             longPress();
         }
-
+       
     }
+	@Override
+	public boolean onDown(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onShowPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onLongPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

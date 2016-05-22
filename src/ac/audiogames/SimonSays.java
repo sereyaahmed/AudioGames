@@ -8,17 +8,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
-import java.io.IOException;
-
 //import com.immersion.uhl.Launcher;
 
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
-
-import org.pielot.openal.Buffer;
-import org.pielot.openal.SoundEnv;
-import org.pielot.openal.Source;
 
 public class SimonSays extends Activity implements TextToSpeech.OnInitListener {
 

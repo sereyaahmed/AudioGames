@@ -2,73 +2,79 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Testing" >
-
-    <TextView
-        android:id="@+id/fullscreen_content_test"
+    
+    <TableRow android:id="@+id/table_row1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:keepScreenOn="true"
-        android:textColor="#CCCCCC"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/view_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:textColor="#CCCCCC"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/view_y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:textColor="#CCCCCC"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/view_z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:textColor="#CCCCCC"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/view_gain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:textColor="#CCCCCC"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/view_roll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:textColor="#CCCCCC"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/view_pitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:textColor="#CCCCCC"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
+        android:textColor="#CCCCCC" 
+        android:textStyle="bold" 
+        android:weightSum="60"
+        android:lines="2">
+    
+	    <TextView
+	        android:id="@+id/view_x"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:keepScreenOn="true"
+	        android:textColor="#CCCCCC"
+	        android:textSize="50sp"
+	        android:textStyle="bold" 
+	        android:layout_weight="10"/>
+	    <TextView
+	        android:id="@+id/view_y"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:keepScreenOn="true"
+	        android:textColor="#CCCCCC"
+	        android:textSize="50sp"
+	        android:textStyle="bold" 
+	        android:layout_weight="10"/>
+	    <TextView
+	        android:id="@+id/view_z"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:keepScreenOn="true"
+	        android:textColor="#CCCCCC"
+	        android:textSize="50sp"
+	        android:textStyle="bold" 
+	        android:layout_weight="10"/>
+	    <TextView
+	        android:id="@+id/view_gain"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:keepScreenOn="true"
+	        android:textColor="#CCCCCC"
+	        android:textSize="50sp"
+	        android:textStyle="bold" 
+	        android:layout_weight="10"/>
+	    <TextView
+	        android:id="@+id/view_roll"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:keepScreenOn="true"
+	        android:textColor="#CCCCCC"
+	        android:textSize="50sp"
+	        android:textStyle="bold" 
+	        android:layout_weight="10"/>
+	    <TextView
+	        android:id="@+id/view_pitch"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:keepScreenOn="true"
+	        android:textColor="#CCCCCC"
+	        android:textSize="50sp"
+	        android:textStyle="bold" 
+	        android:layout_weight="10"/>
+	</TableRow>
 </LinearLayout>
